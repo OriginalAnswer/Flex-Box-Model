@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <style>
+        *{top: 0;left: 0;margin: 0;padding: 0;box-sizing: content-box;}
+        html,body{width: 100%;height: 100%;}
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        body,article,.box,.smbx{display: flex;}
+        span,details{text-align: center;}
+        article{
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+        }
+        article>div{
+            margin: 30px;
+        }
+        article>div>h3{
+            margin-bottom: 10px;
+        }
+        .box,.smbx{
+            border-radius: 5px;
+        }
+        .box{
+            background-color:orangered;
+            padding: 5px;
+            flex-wrap: wrap;
+        }
+        .smbx{
+            background-color:midnightblue;
+            color: #fff;
+            padding: 5px;margin: 5px;
+            width: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .landscape{
+            width: 200px;
+        }
+        .portrait{
+            width: 40px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .sq{width: 120px;height: 100px;}
+/* FLEX-DIRECTION */
+.fd-r{flex-direction: row;}
+.fd-r-r{flex-direction: row-reverse;}
+.fd-c{flex-direction: column;}
+.fd-c-r{flex-direction: column-reverse;}
+/* FLEX-WRAP */
+.fw-nw{flex-wrap: nowrap;}
+.fw-w{flex-wrap: wrap;}
+.fw-w-r{flex-wrap: wrap-reverse;}
+/* JUSTIFY-CONTENT */
+.jc-fs{justify-content: flex-start;}
+.jc-fe{justify-content: flex-end;}
+.jc-c{justify-content: center;}
+.jc-sb{justify-content: space-between;}
+.jc-sa{justify-content: space-around;}
+/* ALIGN-CONTENT */
+.ac-str{align-content: stretch;}
+.ac-fs{align-content: flex-start;}
+.ac-c{align-content: center;}
+.ac-fe{align-content: flex-end;}
+.ac-sb{align-content: space-between;}
+.ac-sa{align-content: space-around;}
+/* ALIGN-ITEMS */
+.ai-str{align-items: stretch;}
+.ai-bl{align-items: baseline;}
+.ai-bl>.box-1>span{font-size: 3em;}
+.ai-bl>.box-2>span{font-size: 2em;}
+.ai-bl>.box-3>span{font-size: 0.5em;}
+.ai-fs{align-items: flex-start;}
+.ai-c{align-items: center;}
+.ai-fe{align-items: flex-end;}
+/* ALIGN-SELF */
+.as>.box{width: 80vw;}
+.as .box-1>span{font-size: 3em;}
+.as .box-2>span{font-size: 2em;}
+.as .box-3>span{font-size: 0.5em;}
+.as-auto{align-self: auto;}
+.as-str{align-self: stretch;}
+.as-bl{align-self: baseline;}
+.as-fs{align-self: flex-start;}
+.as-c{align-self: center;}
+.as-fe{align-self: flex-end;}
+/* FLEX-GLOW */
+.fg .smbx{width: auto;}
+.fg-00p{flex-grow: 0;}
+.fg-05{flex-grow: 0.5;}
+.fg-1{flex-grow: 1;}
+.fg-0{flex-grow: 0;}
+.fg-025{flex-grow: 0.25;}
+.fg-05ormore{flex-grow: 0.5;}
+/* FLEX-SHRINK */
+/* FLEX-BASIS */
+/* ORDER */
+    </style>
+</head>
+<body>
+    <details>
+        <summary>FLEX-DIRECTION</summary>
+        <article>
+            <div>
+                <h3>Row</h3>
+                <div class="box landscape fd-r">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>Row-reverse</h3>
+                <div class="box landscape fd-r-r">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>Column</h3>
+                <div class="box portrait fd-c">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>Column-reverse</h3>
+                <div class="box portrait fd-c-r">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+        </article>
+    </details>
+    <details>
+        <summary>FLEX-WRAP</summary>
+        <article>
+            <div>
+                <h3>Nowrap</h3>
+                <div class="box sq fw-nw">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>Wrap</h3>
+                <div class="box sq fw-w">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>Wrap-reverse</h3>
+                <div class="box sq fw-w-r">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+        </article>
+    </details>
+    <details>
+        <summary>JUSTIFY-CONTENT</summary>
+        <article>
+            <div>
+                <h3>flex-start</h3>
+                <div class="box landscape jc-fs">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>center</h3>
+                <div class="box landscape jc-c">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>flex-end</h3>
+                <div class="box landscape jc-fe">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>space-between</h3>
+                <div class="box landscape jc-sb">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>space-around</h3>
+                <div class="box landscape jc-sa">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+        </article>
+    </details>
+    <details>
+        <summary>ALIGN-CONTENT</summary>
+        <article>
+            <div>
+                <h3>stretch</h3>
+                <div class="box portrait ac-str">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>flex-start</h3>
+                <div class="box portrait ac-fs">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>center</h3>
+                <div class="box portrait ac-c">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>flex-end</h3>
+                <div class="box portrait ac-fe">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>space-between</h3>
+                <div class="box portrait ac-sb">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>space-around</h3>
+                <div class="box portrait ac-sa">
+                    <div class="box-1 smbx"><span>1</span></div>
+                    <div class="box-2 smbx"><span>2</span></div>
+                    <div class="box-3 smbx"><span>3</span></div>
+                </div>
+            </div>
+        </article>
+    </details>
+    <details >
+        <summary>ALIGN-ITEMS</summary>
+        <article>
+        <div>
+            <h3>stretch</h3>
+            <div class="box sq ai-str">
+                <div class="box-1 smbx"><span>1</span></div>
+                <div class="box-2 smbx"><span>2</span></div>
+                <div class="box-3 smbx"><span>3</span></div>
+            </div>
+        </div>
+        <div>
+            <h3>baseline</h3>
+            <div class="box sq ai-bl">
+                <div class="box-1 smbx"><span>1</span></div>
+                <div class="box-2 smbx"><span>2</span></div>
+                <div class="box-3 smbx"><span>3</span></div>
+            </div>
+        </div>
+        <div>
+            <h3>flex-start</h3>
+            <div class="box sq ai-fs">
+                <div class="box-1 smbx"><span>1</span></div>
+                <div class="box-2 smbx"><span>2</span></div>
+                <div class="box-3 smbx"><span>3</span></div>
+            </div>
+        </div>
+        <div>
+            <h3>center</h3>
+            <div class="box sq ai-c">
+                <div class="box-1 smbx"><span>1</span></div>
+                <div class="box-2 smbx"><span>2</span></div>
+                <div class="box-3 smbx"><span>3</span></div>
+            </div>
+        </div>
+        <div>
+            <h3>flex-end</h3>
+            <div class="box sq ai-fe">
+                <div class="box-1 smbx"><span>1</span></div>
+                <div class="box-2 smbx"><span>2</span></div>
+                <div class="box-3 smbx"><span>3</span></div>
+            </div>
+        </div>
+        </article>
+    </details>
+    <details>
+        <summary>ALIGN-SELF</summary>
+        <article class="as">
+            <div class="box">
+                <div class="box-1 smbx as-auto"><span>1</span></div>
+                <div class="box-2 smbx as-auto"><span>2</span></div>
+                <div class="box-3 smbx as-auto"><span>3</span></div>
+                <div class="box-4 smbx as-str"><span>4</span></div>
+                <div class="box-5 smbx as-bl"><span>5</span></div>
+                <div class="box-6 smbx as-fs"><span>6</span></div>
+                <div class="box-7 smbx as-c"><span>7</span></div>
+                <div class="box-8 smbx as-fe"><span>8</span></div> 
+            </div>
+        </article>
+    </details>
+    <details open>
+        <summary>FLEX-GLOW</summary>
+        <article class="fg">
+            <div>
+                <h3>0 (0 = 0%)</h3>
+                <div class="box landscape fg-00p">
+                    <div class="smbx"><span>1</span></div>
+                </div>
+            </div>
+            <div>
+                <h3>0.5</h3>
+                <div class="box landscape fg-1">
+                    <div class="smbx"><span>1</span></div>
+                </div>
+            </div>
+        </article>
+    </details>
+    <details open>
+        <summary>FLEX-SHRINK</summary>
+        <article>
+            
+        </article>
+    </details>
+    <details open>
+        <summary>FLEX-BASIS</summary>
+        <article>
+            
+        </article>
+    </details>
+    <details open>
+        <summary>ORDER</summary>
+        <article>
+            
+        </article>
+    </details>
+</body>
+</html>
